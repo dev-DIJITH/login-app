@@ -13,6 +13,7 @@
 <script type="text/babel">
     import { mapActions, mapGetters } from 'vuex'
     import { ACTION_LOGIN,GET_NAME_DATA } from '@/store/modules/User';
+    import router from '../../router';
     export default {
         data () {
             return {
@@ -34,8 +35,9 @@
             })
         },
         created() {
-            alert(this.name_data);
-           // this.$router.push('/');
+          if(this.name_data){
+              router.push('/dashboard');
+          }
         }
     }
 </script>

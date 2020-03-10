@@ -1,3 +1,4 @@
+import router from '../../router';
 export const GET_NAME_DATA = 'name_data'
 export const SET_NAME_DATA = 'set_name_data'
 export const ACTION_LOGIN = 'login'
@@ -13,8 +14,9 @@ export default {
   },
   actions: {
     [ACTION_LOGIN] ({state, commit}, loginData) {
-      console.log(loginData.email);
-      commit(state, loginData.email)
+      router.push('/dashboard')
+      commit(SET_NAME_DATA, loginData.email)
+
     }
   },
   mutations: {
